@@ -1,5 +1,5 @@
 ---
-title: "Identifying Optimal Species Environments"
+title: "Identifying Optimal Environments for Aquaculture"
 author:
   name: Joshua Ferrer-Lozano
   affiliation: Master of Environmental Data Science
@@ -12,6 +12,10 @@ format:
     embed-resources: true
 draft: false
 ---
+
+# Problem Statement: Where along the U.S. West Coast are environmental conditions most suitable for oyster aquaculture?
+
+Aquaculture is increasingly recognized as a critical component of global food security and coastal economies, yet identifying where species can thrive requires careful integration of environmental data. This analysis asks: Where along the U.S. West Coast are environmental conditions most suitable for oyster aquaculture? By combining sea surface temperature (SST), bathymetry, and Exclusive Economic Zone (EEZ) boundaries, we evaluate habitat suitability against oyster depth and temperature thresholds. Previous studies highlight how aquaculture planning must balance ecological constraints with sustainable development goals (FAO, 2024), making geospatial modeling a powerful tool for guiding future investments in marine resources.
 
 # About
 
@@ -44,6 +48,10 @@ Cartographic Visualization: Produced clear maps with legends, units, and orienta
 # Conclusion
 
 This analysis demonstrates how spatial data science can inform sustainable aquaculture planning. By integrating environmental thresholds with geospatial datasets, we can identify where oysters are most likely to thrive. Future work could expand this framework to other species — such as grapevines requiring specific elevations or trees adapted to certain climates — showcasing the versatility of raster reclassification and zonal statistics in environmental modeling.
+
+# Future Implications
+
+While this analysis demonstrates clear spatial patterns of oyster suitability, several caveats remain. The model does not account for salinity, pollution, disease risk, or human use conflicts such as shipping lanes and fishing grounds. Incorporating these additional variables would provide a more holistic view of aquaculture feasibility. Future work could extend this framework to other species with distinct environmental requirements, or to climate change scenarios that alter SST and ocean depth dynamics. By expanding the model’s scope, environmental data science can continue to inform sustainable aquaculture planning and broader ecosystem management.
 
 
 
@@ -353,3 +361,5 @@ area_by_eez %>%
   knitr::kable(digits = 2, caption = "Suitable Area by EEZ (km^2)") |> 
   kableExtra::kable_classic(full_width = FALSE, position = "center")
 ```
+
+
