@@ -1,16 +1,15 @@
 ---
 title: "Identifying Optimal Species Environments"
-author: Joshua Ferrer-Lozano
-date: 11/28/25
-editor: visual
+author:
+  name: Joshua Ferrer-Lozano
+  affiliation: Master of Environmental Data Science
+date: 2025-11-28
+categories: [R, MEDS, data-viz, Geospatial]
 format:
   html:
     toc: true
     code-fold: false
-knitr:
-  opts_chunk:
-    warning: false
-    message: false
+draft: false
 ---
 
 # About
