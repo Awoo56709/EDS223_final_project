@@ -7,7 +7,7 @@ categories: [R, MEDS, data-viz, Geospatial]
 format:
   html:
     toc: true
-    code-fold: false
+    code-fold: true
     embed-resources: true
 draft: false
 execute: 
@@ -266,6 +266,7 @@ area_table_display |>
   kableExtra::row_spec(1:n_rows, background = "#F1F4F8")
 
 ```
+
 Table 1: EEZ rankings by suitable oyster aquaculture area. Northern and Central California together account for over 60% of all suitable habitat.
 
 
@@ -315,6 +316,10 @@ However, this model does not take into account confounding variables. The model 
 
 Future research could extend this framework to other species with distinct environmental requirements or to climate change scenarios that alter SST and ocean depth dynamics. Methods such as raster reclassification, map algebra, and zonal statistics are versatile tools that can be applied to other contexts, such as identifying suitable elevations for grapevines or climate niches for tree species. By broadening the scope, environmental data science can continue to guide sustainable aquaculture development and ecosystem management.
 
+
+# Habitat Suitability Function
+
+## Function Code
 ```{r}
 # Function to map EEZ suitability for a species
 map_species_suitability <- function(sst_min, sst_max, depth_min, depth_max, species_name) {
@@ -394,6 +399,19 @@ map_species_suitability <- function(sst_min, sst_max, depth_min, depth_max, spec
     tm_compass(position = c("right", "top"))
 }
 ```
+
+Below is a function that consolidizes the code above into a self-maintained habitat suitability calculator for the U.S West Coast. The parameters needed to use this function include:
+
+- SST min
+-  max
+- Depth min
+- Depth max
+- Species name
+
+Enter these values in the folowing order separated by commas (sst_min, sst_max, depth_min, depth_max, species_name)
+
+Given these parameters, the function will color code the west coast aquaculture regions in terms of suitability.
+
 
 ```{r}
 # Use the function for finding suitable area for Geoducks
