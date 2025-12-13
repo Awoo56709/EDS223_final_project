@@ -273,11 +273,11 @@ Table 1: EEZ rankings by suitable oyster aquaculture area. Northern and Central 
 
 ```{r}
 
-# Map with tmap using your variables
+# Plot tmap
 tm_basemap("Esri.OceanBasemap", alpha = 0.6) +
 tm_shape(eez_sf_out) +
   tm_polygons("suitable_km2",
-              palette = "blues",  # accessible cool-to-hot palette
+              palette = "blues",  # Accessible cool-to-hot palette
               title = "Suitable Area (km²)",
               border.col = "grey30",
               border.lwd = 0.6) +
