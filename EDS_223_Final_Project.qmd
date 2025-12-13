@@ -105,8 +105,6 @@ sst_celsius <- sst_mean - 273.15
 # Replace NA values with 0
 sst_celsius[is.na(sst_celsius)] <- 0
 
-# Add warning if the range is wrong
-if (max(values(sst_celsius), na.rm=TRUE) > 40) warning("SST unusually high — check conversion.")
 ```
 
 Plot Mean Surface Temperature on West Coast
@@ -122,7 +120,7 @@ tm_shape(sst_stars) +
   tm_compass(position = c("right", "bottom"))
 
 ```
-Figure 1: The mean sea surface temperature (SST) raster from the years 2008 - 2012 provides insight into the temperature variation along the west coast of the united states from California to Washington state with warmer waters on average in the southern regions and cooler in the northern regions.
+Figure 1: The mean sea surface temperature (SST) raster from the years 2008 - 2012 provides insight into the temperature variation along the West Coast of the United States from California to Washington state with warmer waters on average in the southern regions and cooler in the northern regions.
 
 ## Step 3: Reproject, crop and resample bathymetry to SST resolution
 
@@ -192,7 +190,7 @@ ggplot(suit_df) +
   labs(title = "Combined Suitability (Oysters)") +
   theme_minimal()
 ```
-Figure 2: Combined suitability raster. Gold areas represent suitable oyster environments, purple areas unsuitable.”
+Figure 2: Combined suitability raster. Gold areas represent suitable oyster environments, purple areas unsuitable.
 
 ## Step 7: Suitability by EEZ
 
@@ -277,7 +275,7 @@ Table 1: EEZ rankings by suitable oyster aquaculture area. Northern and Central 
 tm_basemap("Esri.OceanBasemap", alpha = 0.6) +
 tm_shape(eez_sf_out) +
   tm_polygons("suitable_km2",
-              palette = "blues",  # Accessible cool-to-hot palette
+              palette = "blues",  # Accessible cool palette
               title = "Suitable Area (km²)",
               border.col = "grey30",
               border.lwd = 0.6) +
@@ -306,16 +304,16 @@ Figure 3: Oyster aquaculture suitability by EEZ. Southern California and Central
 
 - Zonal statistics allow policymakers to compare aquaculture potential across regions.
 
-- Southern EEZs (Southern, Central and Northern California) show the largest suitable areas.
+- Southern EEZs (Southern and Central California) show the largest suitable areas.
 
 
 # Discussion
 
 This analysis demonstrates how spatial data science can inform sustainable aquaculture planning. By integrating environmental thresholds with geospatial data sets, we identified where oysters are most likely to thrive along the U.S. West Coast. The results reveal clear spatial patterns of suitability, with Central and Southern California emerging as the most promising regions, while Washington and Oregon also contain meaningful but smaller areas of potential habitat.
 
-However, this model does take into account confounding variables. The model does not account for salinity, pollution, disease risk, or human use conflicts such as shipping lanes and fishing grounds. Incorporating these additional variables would provide a more holistic view of aquaculture feasibility. Previous studies highlight how aquaculture planning must balance ecological constraints with sustainable development goals (FAO, 2024), underscoring the importance of expanding analyses beyond physical thresholds.
+However, this model does not take into account confounding variables. The model does not account for salinity, pollution, disease risk, or human use conflicts such as shipping lanes and fishing grounds. Incorporating these additional variables would provide a more holistic view of aquaculture feasibility. Previous studies highlight how aquaculture planning must balance ecological constraints with sustainable development goals (FAO, 2024), underscoring the importance of expanding analyses beyond physical thresholds.
 
-Future research could extend this framework to other species with distinct environmental requirements or to climate change scenarios that alter SST and ocean depth dynamics. The methods demonstrated raster reclassification, map algebra, and zonal statistics—are versatile tools that can be applied to other contexts, such as identifying suitable elevations for grapevines or climate niches for tree species. By broadening the scope, environmental data science can continue to guide sustainable aquaculture development and ecosystem management.
+Future research could extend this framework to other species with distinct environmental requirements or to climate change scenarios that alter SST and ocean depth dynamics. Methods such as raster reclassification, map algebra, and zonal statistics are versatile tools that can be applied to other contexts, such as identifying suitable elevations for grapevines or climate niches for tree species. By broadening the scope, environmental data science can continue to guide sustainable aquaculture development and ecosystem management.
 
 ```{r}
 # Function to map EEZ suitability for a species
